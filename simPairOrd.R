@@ -27,6 +27,7 @@ semipartgammanpip1
 #i2
 pr2<-c(1,0,0)
 npip2<-sample(cordlev,size=np,replace=T,prob=pr2)
+
 #compute coefficients
 gammanpip2<-sum(npip2)/np
 gammanpip2
