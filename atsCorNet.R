@@ -6,7 +6,7 @@ library("qgraph")
 #general network graph
 qgraph(taumat,minimum=0.5)
 
-#do Exploratory Graph Analysis (EGA) with TMFG to find "communities"
+#do Exploratory Graph Analysis (EGA) with TMFG and walktrap to find "communities"
 ifelse("EGAnet" %in% row.names(installed.packages())==TRUE,
        ifelse(packageVersion("EGAnet")=="2.0.6", 
        "The EGAnet package is installed, jump to step #3", 
