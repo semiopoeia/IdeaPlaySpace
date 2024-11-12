@@ -1,4 +1,3 @@
-setwd("C:/Users/PWS5/OneDrive - University of Pittsburgh/Desktop/SleepHUB/")
 ats40<-read.table("ATS40.csv",header=T, sep=",")
 taumat<-cor(na.omit(ats40[,-1]),method="kendall")
 
