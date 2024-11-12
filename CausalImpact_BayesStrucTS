@@ -1,0 +1,20 @@
+install.packages("CausalImpact",dep=T)
+
+library(CausalImpact)
+
+preT<-cbind(1:50,rnorm(50,50,10),rep("preT",50))
+preC<-cbind(1:50,rnorm(50,60,10),rep("preC",50))
+predat<-cbind(preT,preC)
+postT<-cbind(51:100,rnorm(50,100,15),rep("postT",50))
+postC<-cbind(51:100,rnorm(50,60,10),rep("postC",50))
+postdat<-cbind(postT,postC)
+
+dat<-rbind(predat,postdat)
+dat2<-matrix(as.numeric(dat[,c(2,5)]),nrow=100,ncol=2)
+matplot(dat2,type="l")
+
+pre.period<-c(1,50)
+post.period<-c(51,100)
+
+impact <- CausalImpact(dat2, pre.period, post.period)
+plot(impact)
